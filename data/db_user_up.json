@@ -1,0 +1,44 @@
+{
+  "user_up": [
+    {
+      "email": "John Doe",
+      "password": "john@ff",
+      "phone" : "1234567890",
+      "firstName" : "John",
+      "lastName" : "Doe",
+      "id": 1
+    },
+    {
+      "email": "John Doe",
+      "password": "john@ff",
+      "phone" : "1234567890",
+      "firstName" : "John",
+      "lastName" : "Doe",
+      "id": 5
+    },
+    {
+      "email": "John Doe",
+      "password": "john@ff",
+      "phone" : "1234567890",
+      "firstName" : "John",
+      "lastName" : "Doe",
+      "id": 6
+    },
+    {
+      "email": "John Doe",
+      "password": "john@ff",
+      "phone" : "1234567890",
+      "firstName" : "John",
+      "lastName" : "Doe",
+      "id": 7
+    },
+    {
+      "email": "John Doe",
+      "password": "john@ff",
+      "phone" : "1234567890",
+      "firstName" : "John",
+      "lastName" : "Doe",
+      "id": 8
+    }
+  ]
+}

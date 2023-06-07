@@ -1,0 +1,16 @@
+{
+  "order": [
+    {
+      "total": "2000",
+      "id_user": 1,
+      "address":"giza",
+      "methode":"Cash"
+    },
+    {
+      "total": "2000",
+      "id_user": 1,
+      "address":"giza",
+      "methode":"Cash"
+    }
+  ]
+}

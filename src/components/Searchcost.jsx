@@ -1,0 +1,95 @@
+import {React, useState, useEffect} from 'react'
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
+import Searchs from "./Searchs";
+import useFetch from "../apifolder/useFetch";
+
+function Removecost() {
+  const [id, setID] = useState();
+  const [click, setClick] = useState(false);
+
+  const { data, isPending, error } = useFetch(
+    "http://127.0.0.1:8000/View_All_Customer"
+  );
+
+
+    async function handleSubmit(e) {
+      //  e.preventDefault();
+
+      // try {
+      //   console.log("error 1");
+      //   let result = await fetch("http://localhost:8111/cart", {
+      //     method: "POST",
+      //     mode: "no-cors",
+      //     headers: {
+      //       Accept: "application/json",
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify({
+      //       id_user: id,
+      //     }),
+      //   });
+      //   //   window.alert(result);
+      //   //   console.log(result);
+      // } catch (e) {
+      //   console.log(e);
+      // }
+      setClick(true);
+      // navigate("/Cart/" + id_user);
+    }
+
+    useEffect(() => {}, [click]);
+
+  return (
+    <div class="px-6 h-full text-gray-800 mt-10">
+      <div class="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
+        <div class="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0 ">
+          <p class="text-4xl font-bold mb-10 mr-14 text-3xl lg:text-4xl font-semibold leading-7 lg:leading-9 text-gray-800 item-center text-center ">
+            Search customer
+          </p>
+          <form class="w-full max-w-lg">
+            <div class="flex flex-wrap -mx-3  mt-12 justify-center">
+              <div class="w-full px-3">
+                <label
+                  class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-password"
+                >
+                  Enter ID
+                </label>
+                <input
+                  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="grid-number"
+                  type="name"
+                  placeholder="xxxxxxxxx"
+                  value={id}
+                  onChange={(e) => setID(e.target.value)}
+                />
+              </div>
+              <Button
+                onClick={handleSubmit}
+                style={{
+                  color: "#ffffff",
+                  backgroundColor: "#62B6B7",
+                  marginTop: "10px",
+                }}
+                size="large"
+                variant="contained"
+                disableElevation
+              >
+                Search
+              </Button>
+            </div>
+          </form>
+          <div className="p-5 flex flex-wrap flex-col">
+            {error && <div>{error}</div>}
+            {isPending && <div>Loading...</div>}
+            {data && click && <Searchs id_user={id} search={data} />}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Removecost
